@@ -5,11 +5,13 @@ import warning from '../utils/warning'
 
 let didWarnAboutReceivingStore = false
 function warnAboutReceivingStore() {
-  if (didWarnAboutReceivingStore) {
+  if (didWarnAboutReceivingStore) {//如果已经警告就不再警告。即，通过设置一个标志位来达到只警告一次的目的。
     return
   }
   didWarnAboutReceivingStore = true
-
+  
+  //从这段警告里面，我可以获取这样的信息：
+  // Redux 2.x and React Redux 2.x 不再默认支持reducer的热更新
   warning(
     '<Provider> does not support changing `store` on the fly. ' +
     'It is most likely that you see this error because you updated to ' +

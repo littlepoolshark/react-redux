@@ -33,6 +33,7 @@ export function createProvider(storeKey = 'store', subKey) {
         }
 
         render() {
+          //该reactAPI会检查传入该组价的children是否只有一个child，是的话就返回这个child组件，否则的话抛出错误。
           return Children.only(this.props.children)
         }
     }
